@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <title>Prosiembra.com</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'profile'%}" title="Mi Perfil">Mi Perfil</a></li>
+                <li><a href="{% url 'products' %}" title="Productos">Productos</a></li>
+                <li><a href="{% url 'customer' %}" title="Servicio al cliente">Servicio al cliente</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div id="message-box" class="message-box">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="session-message">
+            {{ request.COOKIES.welcome_message }}
+        </div>
+    </div>
+    <h1 class="titulo">BIENVENIDOS A PROSIEMBRA</h1>
+     
+    <div class="logo2">
+        <img src="https://scontent.fbog4-2.fna.fbcdn.net/v/t39.30808-6/312972269_2085831358294031_721500278146491790_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=52f669&_nc_eui2=AeH8xQjuHUa1l5QZPyUOQO5GUlbrSxH81elSVutLEfzV6XzsyrzqpyMjcgNJ6mmvAJ3MBRyz2VQ2aWpaIwleZyjl&_nc_ohc=KQj73m0J0zsAX8Ur6Kc&_nc_ht=scontent.fbog4-2.fna&oh=00_AfAsT3nrfzIVerV4skUJpzaqRXuBjTUnXfuX367jXHK9Vw&oe=6514AA8F"alt="fondo principal">
+    </div>
+
+
+<p class="parrafo">Los productos orgánicos son alimentos y productos agrícolas cultivados o producidos sin el uso de pesticidas, herbicidas ni fertilizantes químicos sintéticos, evitando organismos genéticamente modificados (OGM). Estas prácticas promueven la sostenibilidad ambiental, el bienestar animal y la conservación del suelo, reduciendo el impacto negativo en el medio ambiente. Los productos orgánicos suelen llevar etiquetas de certificación que indican su conformidad con estándares orgánicos, y se argumenta que pueden tener un mejor sabor y ser más nutritivos debido a la atención a la salud del suelo y de las plantas. En última instancia, los productos orgánicos son una elección sostenible y saludable que busca preservar la tierra para las generaciones futuras.</p>
+    
+<header class="informacion">
+    <h1>INFORMACION DE PRODUCTOS</h1>
+
+</header>
+ 
+<div class="arroz_organico">
+    <img src="{% static 'images/Arroz.png' %}" alt="Arroz organico"> 
+    <h1>Arroz organico </h1>
+    <br>
+    <p>A diferencia del arroz blanco,<br> el arroz orgánico contiene grandes cantidades <br> de fibra, más minerales y vitaminas que ayudan <br> a depurar rápidamente nuestro cuerpo y <br> prevenir múltiples enfermedades</p>
+</div>
+
+<div class="cafe_organico">
+    <img src="https://i0.wp.com/www.cafequindio.com.co/wp-content/uploads/2020/04/ORGANICO-GRANO-340-2023.png?fit=2000%2C2300&ssl=1" alt="Cafe organico">
+    <h1>Cafe organico</h1>
+    <br>
+    <p>No contiene pesticidas, químicos  <br> o fertilizantes. Contribuye a  <br>la preservación del medio ambiente. <br> Aporta antioxidantes y vitaminas</p>
+</div>
+
+
+
+<div class="pasta_organica">
+   <img src="https://images.rappi.com/products/1743238-1606295314945.png" alt="Pasta organica">
+   <h1>Pasta Organica</h1>
+   <br>
+   <p>se elabora a partir del cultivo del trigo <br> en un suelo naturalmente sano y nutrido,<br> donde se evitan el uso de plaguicidas <br> y fertilizantes químicos</p>
+</div>
+
+
+<div class="Chocolate_organico">
+    <img src="https://equiori.co/wp-content/uploads/2022/04/100-2.png" alt="Chocolate organico">
+    <H1>Chocolate Organico</H1>
+    <br>
+    <p>El chocolate orgánico con un buen porcentaje <br>de pureza tiene una concentración natural casi imperceptible de azúcares,<br> por lo que no se adhiere a nuestros dientes</p>
+
+</div>
+    
+<div class="Pan_Organico">
+    <img src="{% static 'images/pan.png' %}" alt="pan organico ">
+    <h1>Pan Organico</h1>
+    <br>
+   <p>El pan orgánico es muy saludable y nutritivo <br> debido a su uso de harinas orgánicas y ingredientes <br> de alta calidad que contienen carbohidratos,   <br>proteínas, grasas, minerales y vitaminas esenciales <br>de la naturaleza.</p>
+   </div>
+
+<div class="tomate_organico">
+    <img src="https://images.rappi.com/products/1501970-1619737320870.jpg" alt="Tomate Organico">
+    <h1>Tomate Organico</h1>
+    <br>
+    <p>los tomates son la principal fuente <br>dietética del licopeno,los tomates <br>son la principal fuente dietética del <br> licopeno</p>
+</div>
+
+<div class="galletas_organicas">
+    <img src="https://www.nativealimentos.com.br/upload/products/produtos/packs-cookies-cacau-310x494-6442.png" alt="galletas orgánicas">
+    <h1>Galletas Organicas</h1>
+    <br>
+    <p>Ayudan a su crecimiento, así  <br> como suponen un aporte energético <br> que favorece su desarrollo y rendimiento <br> intelectual. Aportan vitalidad, saciedad,<br> y son ricas en nutrientes.</p>
+</div>
+
+<div class="aceite_oliva">
+    <img src="https://www.nativealimentos.com.br/upload/products/produtos/pack-azeite-detalhe-v1-5259.png" alt="aceite de oliva ">
+    <h1>aceite de oliva</h1>
+    <br>
+    <p>Este producto previene el envejecimiento prematuro gracias a sus antioxidantes y Vitamina E. Estos componentes protegen la piel de los radicales libres y evitan la oxidación celular, manteniendo la producción de colágeno para una piel más elástica y saludable.</p>
+</div>
+
+</body>
+</html>
+    

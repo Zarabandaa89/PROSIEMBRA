@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/customer_service.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Prosiembra</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'main' %}" title="Inicio">Inicio</a></li>
+                <li><a href="{% url 'profile'%}" title="Mi Perfil">Mi Perfil</a></li>
+                <li><a href="{% url 'products' %}" title="Productos">Productos</a></li>
+            </ul>
+        </nav>
+        <div class="session-message">
+            {{ request.COOKIES.welcome_message }}
+        </div>
+    </header>
+    <div id="message-box1" class="message-box1">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    </div>
+    <div class="container">
+
+        <div class="faq">
+            <h3>¿Cómo puedo contactar al servicio de atención al cliente?</h3>
+            <p>Puedes contactarnos iniciando un chat via WhatsApp en el siguiente link: <a
+                    href="https://wa.me/+573107773392">WhatsApp</a> o por correo electrónico a <a
+                    href="mailto:fundacionprosiembra@gmail.com">fundacionprosiembra@gmail.com</a>.</p>
+        </div>
+
+        <div class="faq">
+            <h3>¿Cuál es el tiempo de respuesta para las quejas y reclamos?</h3>
+            <p>El tiempo de respuesta para los PQR´S es de 24 a 48 horas hábiles. En el correo indicado anteriormente en el formulario</p>
+        </div>
+    </div>
+
+    <h1>Formulario de PQRS</h1>
+    <form action="#" method="post">
+        {% csrf_token %}
+        {{ form }}
+
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

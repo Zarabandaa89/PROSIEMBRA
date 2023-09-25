@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/products.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <title>Prosiembra</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'main' %}" title="Inicio">Inicio</a></li>
+                <li><a href="{% url 'profile'%}" title="Mi Perfil">Mi Perfil</a></li>
+                <li><a href="{% url 'customer' %}" title="Servicio al cliente">Servicio al cliente</a></li>
+            </ul>
+        </nav>
+    </header>
+            <div class="container-icon">
+                <div class="container-cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="icon-cart">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                    </svg>
+                    <div class="count-products">
+                        <span id="contador-productos">0</span>
+                    </div>
+                </div>
+
+                <div class="container-cart-products hidden-cart">
+                    <div class="row-product hidden">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <span class="cantidad-producto-carrito">1</span>
+                                <p class="titulo-producto-carrito">Arroz blanco Organico</p> <span
+                                    class="precio-producto-carrito">11.000</span>
+
+
+
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="icon-close">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+                    <div class="cart-total hidden">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$2.000</span>
+                    </div>
+                    <p class="cart-empty">El carrito está vacío :(</p>
+                </div>
+            </div>
+        </header>
+        <div id="message-box" class="message-box">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <div class="session-message">
+                {{ request.COOKIES.welcome_message }}
+            </div>
+        </div>
+        <div class="container-items">
+            <div class="item">
+                <figure>
+                    <img src="https://escarola.co/wp-content/uploads/2018/02/Arroz-organico-Blanco.jpg"
+                        alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h2>Arroz blaco Organico</h2>
+                    <p class="price">$11.200</p>
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://olimpica.vtexassets.com/arquivos/ids/719005/7702728230426.jpg?v=637756134400270000"
+                        alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h2>Cafe Organico</h2>
+                    <p class="price">$20.000</p>
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://lateconsciente.co/wp-content/uploads/2023/02/Untitled-design-73.png"
+                        alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h2>Chocolate organico con cacao </h2>
+                    <p class="price">$22.000</p>
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://cdn.shopify.com/s/files/1/0510/7521/9648/products/Garofalo-Organic-Pasta-Casarecce-500g-550x550_250x250@2x.jpg?v=1626534878"
+                        alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h2>pasta Organica</h2>
+                    <p class="price">$15.900</p>
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://s.cornershopapp.com/product-images/1215010.jpg?versionId=U1y9jb.bE5jlGNH1AygaSR8ywrI2hyHq"
+                        alt="producto" />
+                </figure>
+                <div class="info-product">
+                    <h2>Pan Organico </h2>
+                    <p class="price">$8.000</p>
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+                <div class="item2">
+                    <figure>
+                        <img src="https://tezeio.vteximg.com.br/arquivos/ids/227577-1000-1000/7898901243410_1_1.png?v=637453891171300000"
+                            alt="producto" />
+                    </figure>
+                    <div class="info-product">
+                        <h2>Tomate Organico </h2>
+                        <p class="price">$8.000</p>
+                        <button class="btn-add-cart">Añadir al carrito</button>
+                    </div>
+                    
+                
+                    <div class="item3">
+                        <figure>
+                            <img src="https://th.bing.com/th/id/OIP.ydbrYKTdVRzhC-hOC4cyCQHaHa?pid=ImgDet&rs=1"
+                                alt="producto" />
+                        </figure>
+                        <div class="info-product">
+                            <h2>Galletas Organicas </h2>
+                            <p class="price">$5.000</p>
+                            <button class="btn-add-cart">Añadir al carrito</button>
+                        </div>
+
+                    
+                        <div class="item4">
+                            <figure>
+                                <img src="https://d2r9epyceweg5n.cloudfront.net/stores/728/962/products/_mlb38741-b84d34aec75798a30816299208269592-1024-1024.jpg"
+                                    alt="producto" />
+                            </figure>
+                            <div class="info-product">
+                                <h2>Aceite de Oliva </h2>
+                                <p class="price">$14.000</p>
+                                <button class="btn-add-cart">Añadir al carrito</button>
+                            </div>
+            </div>
+        </div>
+
+        <script src="{% static 'js/main.js'%}"></script>
+        </body>
+
+    </html>
+
+</html>

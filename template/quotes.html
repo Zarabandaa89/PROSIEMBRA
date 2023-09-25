@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quotes.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <title>Prosiembra.com</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'profile'%}" title="Mi Perfil">Mi Perfil</a></li>
+                <li><a href="{% url 'products' %}" title="Productos">Productos</a></li>
+                <li><a href="{% url 'customer' %}" title="Servicio al cliente">Servicio al cliente</a></li>
+            </ul>
+        </nav>
+        <div class="session-message">
+            {{ request.COOKIES.welcome_message }}
+        </div>
+    </header>
+
+    <div class="message-box1">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div class="container">
+
+        <div class="faq">
+            <h3>¿Cómo agendar mi cita?</h3><br>
+            <p>Debes llenar el formulario de cita, una vez diligenciado al correo le llegara una confirmacion con el dia y hora de la cita.
+                <br>Todas las citas tienen un valor de $ 10.000 COP
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>¿Cuál es el tiempo de respuesta para la cita?</h3><br>
+            <p>El tiempo de respuesta para las citas es de 24 a 48 horas hábiles.</p>
+        </div>
+    </div>
+   
+    <h1>Formato de citas</h1>
+    <form action="#" method="post">
+        {% csrf_token %}
+        {{ form }}
+        
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+</body>
+
+</html>

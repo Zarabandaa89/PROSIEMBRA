@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inicio.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <title>Prosiembra</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container" id="inicio">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo de la empresa">
+            <a href="#" class="logo">Prosiembra</a>
+            <ul class="nav-links">
+                <li><a href="#we">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#ubi">Ubicación</a></li>
+            </ul>
+            <ul class="nav-links2">
+                <div class="inicio">
+                    <li><a href="{% url 'login' %}">Inicar sesión</a></li>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="registro">
+                    <li><a href="{% url 'register' %}">Registrarme</a></li>
+                    <i class='bx bxs-user-check'></i>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div class="gallery">
+        <div class="image-container">
+            <img src="{% static 'images/frasco.jpeg' %}" alt="Imagen 1">
+        </div>
+        <div class="image-container">
+            <img src="{% static 'images/hojuelas.jpeg' %}" alt="Imagen 2">
+        </div>
+        <div class="image-container">
+            <img src="{% static 'images/harina.jpeg' %}" alt="Imagen 3">
+        </div>
+    </div>
+
+
+
+    <p class="uno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos
+        corrupti <br> deserunt. Officia fuga nihil nulla ad nisi aperiam laboriosam est aspernatur <br> nam,
+        impedit facere , asperiores ipsam nostrum obcaecati non! Lorem ipsum <br> dolor sit amet consectetur adipisicing
+        elit. Quasi,
+        facere. Corporis laborum fugit <br> ex quasi.
+        Eveniet, temporibus. Dolore doloribus saepe illo, pariatur quod aliquam <br> , iusto voluptas molestiae id
+        soluta quia!</p>
+
+
+    <p class="dos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos
+        corrupti <br> deserunt. Officia fuga nihil nulla ad nisi aperiam laboriosam est aspernatur <br> nam,
+        impedit facere , asperiores ipsam nostrum obcaecati non! Lorem ipsum <br> dolor sit amet consectetur adipisicing
+        elit. Quasi,
+        facere. Corporis laborum fugit <br> ex quasi.
+        Eveniet, temporibus. Dolore doloribus saepe illo, pariatur quod aliquam <br> , iusto voluptas molestiae id
+        soluta quia!</p>
+
+
+    <p class="tres">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos
+        corrupti <br> deserunt. Officia fuga nihil nulla ad nisi aperiam laboriosam est aspernatur <br> nam,
+        impedit facere , asperiores ipsam nostrum obcaecati non! Lorem ipsum <br> dolor sit amet consectetur adipisicing
+        elit. Quasi,
+        facere. Corporis laborum fugit <br> ex quasi.
+        Eveniet, temporibus. Dolore doloribus saepe illo, pariatur quod aliquam <br> , iusto voluptas molestiae id
+        soluta quia!</p>
+
+    <div class="nosotros2">
+        <h1>Nosotros</h1>
+    </div>
+
+    <div class="camp">
+        <img src="{% static 'images/uno.jpeg' %}" alt="campesinos">
+        <p>PROSIEMBRA nació del deseo, y porque no decirlo, de la necesidad de alimentarnos <br> de una manera sana.
+            <br><br>
+
+            Para que un alimento sea sano debe ser limpio. Esto significa que debe estar libre de <br> aderezos
+            sintéticos en todos los pasos de su producción: cultivo, procesamiento y empaque. <br>
+            Es ideal reducir tanto como nos sea posible la alimentación no saludable. <br><br>
+
+            Es mucho mayor la cantidad de dinero que derrochamos en tratamientos y fármacos,<br> para aliviar malestares
+            producto de una alimentación inconsciente, que lo invertido en <br> alimentos puros,
+            orgánicos, naturales y ancestrales. Muchos productores y procesadores de <br> alimentos sacrifican calidad
+            por cantidad, pero nos exponen como consumidores a una dieta <br> que puede perjudicar nuestra salud.
+            Abrirnos a una dieta limpia es exponernos a lo mejor <br> que la naturaleza tiene para ofrecernos.
+        </p>
+    </div>
+
+
+
+    <section id="we">
+        <div class="camp2">
+            <img src="{% static 'images/dos.jpeg'%}" alt="campesinas">
+            <p>Nuestro propósito es acercar los maravillosos frutos del trabajo de estas familias, en <br> su mayoría
+                rurales y de pequeña escala, a los hogares urbanos. <br><br> Queremos apoyar tanto a las comunidades
+                rurales como a los habitantes urbanos, <br> satisfaciendo la creciente demanda de alimentos saludables
+                y promoviendo un estilo <br> de vida sostenible. <br><br>Promovemos el consumo de alimentos limpios y
+                tradicionales, lo que impulsa a nuestras <br> comunidades productoras y transformadoras
+                a seguir haciendo un trabajo excepcional. <br>Nuestro compromiso es clave para mantener la salud, el
+                conocimiento sobre la <br> economía campesina y tradicional, y otros aspectos esenciales.</p>
+        </div>
+    </section>
+
+
+    <div class="nosotros3">
+        <h1>Ubicación y Contacto</h1>
+    </div>
+
+
+    <div class="mapa" id="#ubi">
+        <i class='bx bx-map'></i><a href="https://www.google.com/maps/place/FUNDACI%C3%93N+PROSIEMBRA/@4.619726,-74.0746416,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f99839aee2949:0xb4a9f209bb5caf8d!8m2!3d4.6197207!4d-74.0720667!16s%2Fg%2F11dzw9w3kz?entry=ttu"><h4>Calle 31a # 16-23</h4></a>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.856231078256!2d-74.07464162424986!3d4.619726042352624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99839aee2949%3A0xb4a9f209bb5caf8d!2sFUNDACI%C3%93N%20PROSIEMBRA!5e0!3m2!1ses!2sco!4v1695436583037!5m2!1ses!2sco"></iframe>
+    </div>
+
+    <section id="ubi">
+    <section id="contacto">
+    <div class="contac">
+        <i class='bx bxs-phone'></i>
+        <h3>3107773392</h3>
+        <h3 class="gmail"><a href="mailto:fundacionprosiembra@gmail.com">Enviar correo aqui</a></h3>
+        <h3 class="whatsapp"><a href="https://api.whatsapp.com/send?phone=573107773392">Inicia un chat aqui</a></h3>
+        <i class='bx bxl-gmail'></i>
+        <i class='bx bxl-whatsapp'></i>
+    </div>
+</section>
+</section>
+    
+    <script src="{% static 'js/nosotros.js'%}"></script>
+
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#we">Acerca de nosotros</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <ul class="accounts">
+                    <li><a href="{%url 'login'%}">Cuenta</a></li>
+                    <li><a href="{%url 'register'%}">Registrarme</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-social">
+                <h3>Síguenos en:</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/fundacionprosiembra"><i
+                                class='bx bxl-facebook-circle'></i></a>
+                        <p></p>
+                    </li>
+                    <li><a href="https://instagram.com/f.prosiembra?igshid=MzRlODBiNWFlZA=="><i
+                                class='bx bxl-instagram-alt'></i></a></li>
+                </ul>
+                <div class="red">
+                    <h4><a href="https://www.facebook.com/fundacionprosiembra">f.prosiembra</a></h4>
+                    <h4><a href="https://instagram.com/f.prosiembra?igshid=MzRlODBiNWFlZA==">fundacionprosiembra</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Prosiembra. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+
+</html>
