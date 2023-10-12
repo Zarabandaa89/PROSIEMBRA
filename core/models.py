@@ -58,7 +58,9 @@ class Rendezvous(models.Model):
     #UBICACION
     
     os_choice = {
-        ('Calle 31a #16-23', 'Calle 31a #16-23')
+        ('Calle 31a #16-23', 'Calle 31a #16-23'),
+        ('VIRTUAL', 'VIRTUAL')
+        
     }
     location = models.CharField(max_length=100, verbose_name= 'Ubicacion', choices=os_choice)
     
@@ -70,7 +72,14 @@ class Rendezvous(models.Model):
     }
     appointment_type = models.CharField( max_length=100, verbose_name= 'Tipo de cita', choices=os_choice)
     
-    respondido = models.BooleanField(default=False)
+      
+    os_choice={
+        ('RESPONDIDO', 'RESPONDIDO'),
+        ('NO RESPONDIDO', 'NO RESPONDIDO'),
+     }
+    
+    respuest = models.CharField(max_length= 100, verbose_name='Respuesta', choices=os_choice)
+    
     
     
     def __str__(self):
@@ -133,7 +142,12 @@ class Customer_Service(models.Model):
     #DESCRIPCION
     description = models.TextField(max_length=2000, verbose_name= 'Descripcion PQRS')
     
-    respondido = models.BooleanField(default=False)
+    os_choice={
+        ('RESPONDIDO', 'RESPONDIDO'),
+        ('NO RESPONDIDO', 'NO RESPONDIDO'),
+     }
+    
+    respuest = models.CharField(max_length= 100, verbose_name='Respuesta', choices=os_choice)
     
     os_choice={
         ('Baja', 'Baja'),
@@ -141,7 +155,9 @@ class Customer_Service(models.Model):
         ('Alta', 'Alta'),
     }
     
-    Prioridad = models.CharField(max_length=100, verbose_name='Prioridad PQRS', choices=os_choice)
+    Priority= models.CharField(max_length=100, verbose_name='Prioridad PQRS', choices=os_choice)
+    
+
     
     
     def __str__(self):

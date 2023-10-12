@@ -21,7 +21,7 @@
                 {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
-                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
                     {% endfor %}
                 </ul>
             {% endif %}
@@ -47,7 +47,7 @@
 
             <div class="forget animate__animated animate__zoomIn">
                 <label><input type="checkbox"> Recordar datos de usuario</label>
-                <a href="#">Olvide mi contrsaeña</a>
+                <a href="{%url 'password_reset'%}">Olvide mi contrsaeña</a>
             </div>
 
 

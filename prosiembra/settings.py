@@ -142,9 +142,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True  # Usar TLS para conexiones seguras
 EMAIL_HOST = 'smtp.gmail.com'  # Servidor SMTP de Gmail
 EMAIL_PORT = 587  # Puerto de Gmail para TLS
-EMAIL_USE_TLS = True  # Usar TLS para conexiones seguras
-EMAIL_HOST_USER = 'santiagozarabanda8agmail@gmail.com'  # Tu dirección de Gmail
+EMAIL_HOST_USER = 'santiagozarabanda8a@gmail.com'  # Tu dirección de Gmail
 EMAIL_HOST_PASSWORD = '52748099'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

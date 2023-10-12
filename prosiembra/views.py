@@ -4,9 +4,10 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 from django.contrib import messages
-from .forms import RegisterForm, formularioPqrs, formulariocitas
+from .forms import RegisterForm, formularioPqrs, formulariocitas, Customer_Service
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+import random
 
 
 
@@ -144,16 +145,15 @@ def profile_view(request):
 @login_required(login_url='login')
 def customer_service_view(request):
     
+    random_number = random.randint(1, 100)  # Genera un número aleatorio entre 1 y 100 (ajusta los límites según tus necesidades)
+    
+    
     contact_form = formularioPqrs()
     
     if request.method == 'POST':
-        contact_form = formularioPqrs(data=request.POST)
-        
-        if contact_form.is_valid():
-            contact_form.save()
-            messages.success(request, 'Hemos recibido tu PQRS y estamos trabajando en ello. Te responderemos pronto. Gracias.')
-            return redirect('customer')
-        else:
+        contact_form = formularioPqrs(data=request.POST)  
+        return render(request, 'quotes.html',  {'random_number': random_number}) 
+    else:
             messages.error(request, '')
     return render(request, 'customer_service.html', {'form':contact_form})
 
@@ -182,7 +182,7 @@ def we_view(request):
 @login_required(login_url='login')
 def logout_view(request):
     logout(request)
-    messages.success(request, 'Sesión finalizada Gracias por visitarnos')
+    messages.success(request,'Sesion Finalizada, Gracias por visitarnos.')
     return redirect('login')
 
 
@@ -210,3 +210,10 @@ def quotes_view(request):
 
 def inicio_view(request):
     return render(request, 'inicio.html')
+
+
+def consultas_view(request):
+    return render(request, 'consultas.html')
+
+def password_reset_view(request):
+    return render(request,'password_reset_form.html')
